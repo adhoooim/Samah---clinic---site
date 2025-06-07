@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عيادة الدكتورة سماح الفار</title>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -58,6 +61,27 @@
     }
     button:hover {
       background-color: #34495e;
+    }
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-decoration: none;
+      font-size: 28px;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe5b;
     }
   </style>
 </head>
@@ -124,10 +148,25 @@
     <p><strong>البريد الإلكتروني:</strong> dr.samah@example.com</p>
     <p><strong>العنوان:</strong> 123 شارع الرئيسي، القاهرة، مصر</p>
     <p><strong>ساعات العمل:</strong> السبت - الخميس | من 9 صباحًا إلى 5 مساءً</p>
+    <p>
+      <strong>تابعنا:</strong>
+      <a href="https://www.facebook.com/profile.php?id=100042916783724" target="_blank" style="color: #3b5998; text-decoration: none; margin-left: 10px;">
+        <i class="fab fa-facebook fa-lg"></i> فيسبوك
+      </a>
+      |
+      <a href="https://wa.me/201060986648" target="_blank" style="color: #25D366; text-decoration: none; margin-right: 10px;">
+        <i class="fab fa-whatsapp fa-lg"></i> واتساب
+      </a>
+    </p>
   </section>
 
   <footer>
     <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>
