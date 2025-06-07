@@ -1,10 +1,12 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>عيادة الدكتورة سماح الفار</title>
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -100,68 +102,100 @@
       flex-wrap: wrap;
       gap: 10px;
       justify-content: center;
+      padding: 15px 0;
     }
 
     .gallery img {
       width: 300px;
+      height: 200px;
       border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid #ddd;
+      transition: transform 0.3s ease;
     }
-  </style></head><body>
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
   <header>
     <h1>عيادة الدكتورة سماح الفار</h1>
     <p>الخدمة الطبية كما يجب أن تكون</p>
-  </header>  <nav>
+  </header>  
+
+  <nav>
     <a href="#about">من نحن</a>
     <a href="#services">الخدمات</a>
     <a href="#appointment">حجز موعد</a>
     <a href="#gallery">صور</a>
     <a href="#blog">نصائح</a>
     <a href="#contact">تواصل معنا</a>
-  </nav>  <section id="about">
+  </nav>  
+
+  <section id="about">
     <h2>من هي الدكتورة سماح الفار؟</h2>
     <p>الدكتورة سماح الفار أخصائية أمراض جلدية و تجميل، تهدف إلى تقديم أفضل رعاية جلدية وجمالية باستخدام أحدث التقنيات.</p>
-  </section>  <section id="services">
+  </section>  
+
+  <section id="services">
     <h2>الخدمات</h2>
     <ul>
       <li>كوي الشعر</li>
       <li>فيلر</li>
       <li>علاج الحروق</li>
     </ul>
-  </section>  <section id="gallery">
+  </section>  
+
+  <section id="gallery">
     <h2>صور من العيادة</h2>
     <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1588776814546-0d62e00835f4?auto=format&fit=crop&w=600&q=80" alt="خدمة 1">
-      <img src="https://images.unsplash.com/photo-1594224457860-18d5c7ab5f99?auto=format&fit=crop&w=600&q=80" alt="خدمة 2">
-      <img src="https://images.unsplash.com/photo-1588776814636-198d3efba4a4?auto=format&fit=crop&w=600&q=80" alt="خدمة 3">
+      <img src="https://images.unsplash.com/photo-1588776814546-0d62e00835f4?auto=format&fit=crop&w=600&q=80" alt="خدمة 1" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1594224457860-18d5c7ab5f99?auto=format&fit=crop&w=600&q=80" alt="خدمة 2" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1588776814636-198d3efba4a4?auto=format&fit=crop&w=600&q=80" alt="خدمة 3" loading="lazy">
     </div>
-  </section>  <section id="appointment">
+  </section>  
+
+  <section id="appointment">
     <h2>احجز موعداً</h2>
     <form action="https://formspree.io/f/xkgboega" method="post">
       <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required><label for="phone">رقم الهاتف:</label>
-  <input type="tel" id="phone" name="phone" required>
+      <input type="text" id="name" name="name" required>
 
-  <label for="service">اختر الخدمة:</label>
-  <select id="service" name="service" required>
-    <option value="">--اختر خدمة--</option>
-    <option value="hair">كوي الشعر</option>
-    <option value="filler">فيلر</option>
-    <option value="burns">علاج الحروق</option>
-  </select>
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" name="phone" required>
 
-  <label for="date">اختر التاريخ:</label>
-  <input type="date" id="date" name="date" required>
+      <label for="service">اختر الخدمة:</label>
+      <select id="service" name="service" required>
+        <option value="">--اختر خدمة--</option>
+        <option value="hair">كوي الشعر</option>
+        <option value="filler">فيلر</option>
+        <option value="burns">علاج الحروق</option>
+      </select>
 
-  <label for="time">اختر الوقت:</label>
-  <input type="time" id="time" name="time" required>
+      <label for="date">اختر التاريخ:</label>
+      <input type="date" id="date" name="date" required>
 
-  <label for="notes">ملاحظات إضافية:</label>
-  <textarea id="notes" name="notes" rows="4"></textarea>
+      <label for="time">اختر الوقت:</label>
+      <input type="time" id="time" name="time" required>
 
-  <button type="submit">إرسال</button>
-</form>
+      <label for="notes">ملاحظات إضافية:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
 
-  </section>  <section id="blog">
+      <button type="submit">إرسال</button>
+    </form>
+  </section>  
+
+  <section id="blog">
     <h2>نصائح العناية بالبشرة</h2>
     <ul>
       <li>احرصي على تنظيف بشرتك مرتين يوميًا.</li>
@@ -170,7 +204,9 @@
       <li>تناولي كميات كافية من الماء لدعم صحة الجلد.</li>
       <li>تجنبي لمس وجهك بالأيدي غير النظيفة.</li>
     </ul>
-  </section>  <section id="contact">
+  </section>  
+
+  <section id="contact">
     <h2>تواصل معنا</h2>
     <p><strong>الهاتف:</strong> 0123-456-789</p>
     <p><strong>البريد الإلكتروني:</strong> dr.samah@example.com</p>
@@ -186,9 +222,14 @@
         <i class="fab fa-whatsapp"></i> واتساب
       </a>
     </p>
-  </section>  <footer>
+  </section>  
+
+  <footer>
     <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
-  </footer>  <!-- Floating Buttons -->  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
+  </footer>  
+
+  <!-- Floating Buttons -->  
+  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
   <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook-float" target="_blank">
