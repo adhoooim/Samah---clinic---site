@@ -3,280 +3,710 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>عيادة الدكتورة سماح الفار</title>
+  <title>عيادة الدكتورة سماح الفار | طب الجلدية والتجميل</title>
+  <meta name="description" content="عيادة متخصصة في الأمراض الجلدية والعلاجات التجميلية بأحدث التقنيات تحت إشراف الدكتورة سماح الفار">
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary: #3a7bd5;
+      --secondary: #00d2ff;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --accent: #ff6b6b;
+      --success: #2ecc71;
+      --white: #ffffff;
+      --shadow: 0 5px 15px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: url('https://images.unsplash.com/photo-1556228724-4d68e2e8e9a6?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
     }
-
-    header, nav, section, footer {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 8px;
-      margin: 10px;
-      padding: 20px;
+    
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
     }
-
+    
+    /* Header Styles */
     header {
-      background-color: rgba(44, 62, 80, 0.9);
-      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
       text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 0;
+      margin: 0;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
-
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+      background-size: cover;
+      opacity: 0.2;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      position: relative;
+    }
+    
+    /* Navigation */
     nav {
-      background-color: rgba(52, 73, 94, 0.9);
+      background-color: var(--white);
       text-align: center;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      margin: 0;
+      border-radius: 0;
     }
-
+    
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: var(--dark);
+      margin: 0 1rem;
       text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: var(--transition);
+      position: relative;
     }
-
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      background-color: var(--white);
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+    
+    /* About Section */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .about-content {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 5rem;
+    }
+    
+    /* Services Section */
+    #services ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      list-style: none;
+    }
+    
+    #services li {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+    
+    #services li:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateX(10px);
+    }
+    
+    #services li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-left: 1rem;
+      color: var(--success);
+    }
+    
+    #services li:hover::before {
+      color: white;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 250px;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .image-label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    /* Appointment Form */
     form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .form-group {
       display: flex;
       flex-direction: column;
     }
-
-    label, select, input, textarea, button {
-      margin: 10px 0;
-      padding: 8px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+    
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
     }
-
+    
+    input, select, textarea {
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(58,123,213,0.2);
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
     button {
-      background-color: #2c3e50;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 4px;
       cursor: pointer;
+      transition: var(--transition);
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 200px;
     }
-
+    
     button:hover {
-      background-color: #34495e;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-
+    
+    /* Blog Section */
+    #blog ul {
+      columns: 2;
+      column-gap: 2rem;
+      list-style: none;
+    }
+    
+    #blog li {
+      margin-bottom: 1rem;
+      padding-right: 1.5rem;
+      position: relative;
+      break-inside: avoid;
+    }
+    
+    #blog li::before {
+      content: '\f0a4';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 0;
+      color: var(--primary);
+    }
+    
+    /* Contact Section */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .contact-card {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: var(--dark);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+    }
+    
+    .social-links .facebook {
+      background-color: #3b5998;
+    }
+    
+    .social-links .whatsapp {
+      background-color: #25d366;
+    }
+    
+    .social-links .instagram {
+      background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+      border-radius: 0;
+    }
+    
+    /* Floating Buttons */
     .whatsapp-float, .facebook-float {
       position: fixed;
-      bottom: 20px;
-      width: 55px;
-      height: 55px;
+      bottom: 30px;
+      width: 60px;
+      height: 60px;
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       z-index: 1000;
       text-decoration: none;
+      font-size: 1.8rem;
+      transition: var(--transition);
     }
-
+    
     .whatsapp-float {
-      left: 20px;
+      left: 30px;
       background-color: #25d366;
-      font-size: 28px;
     }
-
+    
     .whatsapp-float:hover {
-      background-color: #1ebe5b;
+      background-color: #128c7e;
+      transform: scale(1.1);
     }
-
+    
     .facebook-float {
-      right: 20px;
+      right: 30px;
       background-color: #3b5998;
-      font-size: 26px;
     }
-
+    
     .facebook-float:hover {
       background-color: #2d4373;
+      transform: scale(1.1);
     }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      padding: 15px 0;
-    }
-
-    .gallery-item {
-      position: relative;
-      width: 300px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .image-label {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      text-align: center;
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    .before-after {
-      display: flex;
-      width: 100%;
-    }
-
-    .before-after img {
-      width: 50%;
-    }
-
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
-      .gallery-item {
-        width: 100%;
-        max-width: 350px;
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+      }
+      
+      #blog ul {
+        columns: 1;
+      }
+      
+      .whatsapp-float, .facebook-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+      }
+      
+      .whatsapp-float {
+        left: 20px;
+      }
+      
+      .facebook-float {
+        right: 20px;
       }
     }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
+    section:nth-child(6) { animation-delay: 0.6s; }
   </style>
 </head>
 <body>
   <header>
     <h1>عيادة الدكتورة سماح الفار</h1>
-    <p>الخدمة الطبية كما يجب أن تكون</p>
+    <p>التميز في طب الجلدية والعلاجات التجميلية</p>
   </header>  
 
   <nav>
-    <a href="#about">من نحن</a>
-    <a href="#services">الخدمات</a>
-    <a href="#appointment">حجز موعد</a>
-    <a href="#gallery">صور</a>
-    <a href="#blog">نصائح</a>
-    <a href="#contact">تواصل معنا</a>
+    <a href="#about"><i class="fas fa-user-md"></i> من نحن</a>
+    <a href="#services"><i class="fas fa-procedures"></i> الخدمات</a>
+    <a href="#gallery"><i class="fas fa-images"></i> معرض الأعمال</a>
+    <a href="#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a>
+    <a href="#blog"><i class="fas fa-lightbulb"></i> نصائح طبية</a>
+    <a href="#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
   </nav>  
 
-  <section id="about">
-    <h2>من هي الدكتورة سماح الفار؟</h2>
-    <p>الدكتورة سماح الفار أخصائية أمراض جلدية و تجميل، تهدف إلى تقديم أفضل رعاية جلدية وجمالية باستخدام أحدث التقنيات.</p>
-  </section>  
+  <main>
+    <section id="about">
+      <div class="about-content">
+        <h2>من هي الدكتورة سماح الفار؟</h2>
+        <p>الدكتورة سماح الفار استشارية أمراض جلدية وتجميل، حاصلة على درجة الماجستير في الأمراض الجلدية من جامعة القاهرة، مع أكثر من 15 عامًا من الخبرة في مجال الأمراض الجلدية والعلاجات التجميلية.</p>
+        <p>تتميز العيادة بتقديم أحدث التقنيات العالمية في مجال العناية بالبشرة وعلاج المشكلات الجلدية، مع التركيز على الجودة والسلامة والنتائج الطبيعية.</p>
+        <ul>
+          <li>عضو الجمعية المصرية للأمراض الجلدية</li>
+          <li>حاصلة على شهادة البورد الأمريكي في التجميل غير الجراحي</li>
+          <li>مدربة معتمدة في تقنيات الفيلر والبوتوكس</li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <i class="fas fa-user-md"></i>
+      </div>
+    </section>  
 
-  <section id="services">
-    <h2>الخدمات</h2>
-    <ul>
-      <li>كوي الشعر</li>
-      <li>فيلر</li>
-      <li>علاج الحروق</li>
-      <li>ليزر</li>
-      <li>حقن البوتوكس</li>
-      <li>علاج حب الشباب</li>
-    </ul>
-  </section>  
+    <section id="services">
+      <h2>خدماتنا المتخصصة</h2>
+      <ul>
+        <li>علاج حب الشباب والندبات</li>
+        <li>حقن الفيلر لملء التجاعيد وتكبير الشفاه</li>
+        <li>حقن البوتوكس لعلاج تجاعيد الوجه</li>
+        <li>إزالة الشعر بالليزر لجميع مناطق الجسم</li>
+        <li>علاج البقع الجلدية وتوحيد لون البشرة</li>
+        <li>علاج تساقط الشعر والصلع الوراثي</li>
+        <li>العناية بالبشرة والعلاجات التجميلية</li>
+        <li>علاج الأكزيما والصدفية والأمراض الجلدية</li>
+      </ul>
+    </section>  
 
-  <section id="gallery">
-    <h2>معرض النتائج</h2>
-    <div class="gallery">
-      <div class="gallery-item">
-        <div class="before-after">
-          <img src="https://i.imgur.com/JqYeZvn.jpg" alt="قبل العلاج" loading="lazy">
-          <img src="https://i.imgur.com/mX8pzDk.jpg" alt="بعد العلاج" loading="lazy">
+    <section id="gallery">
+      <h2>معرض النتائج</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="علاج حب الشباب" loading="lazy">
+          <div class="image-label">علاج حب الشباب - النتائج بعد 3 جلسات</div>
         </div>
-        <div class="image-label">علاج حب الشباب - قبل وبعد</div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="حقن الفيلر" loading="lazy">
+          <div class="image-label">حقن الفيلر - النتائج الفورية</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1556228725-4565a1cd0e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="إزالة الشعر بالليزر" loading="lazy">
+          <div class="image-label">إزالة الشعر بالليزر - بعد 5 جلسات</div>
+        </div>
+        
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1556228453-2a2c5a1b7141?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="علاج البقع الجلدية" loading="lazy">
+          <div class="image-label">علاج البقع الجلدية - النتائج بعد شهرين</div>
+        </div>
+      </div>
+    </section>  
+
+    <section id="appointment">
+      <h2>احجز موعدك الآن</h2>
+      <form action="https://formspree.io/f/xkgboega" method="post">
+        <div class="form-group">
+          <label for="name">الاسم الكامل:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">رقم الهاتف:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        
+        <div class="form-group">
+          <label for="service">اختر الخدمة:</label>
+          <select id="service" name="service" required>
+            <option value="">--اختر خدمة--</option>
+            <option value="acne">علاج حب الشباب</option>
+            <option value="filler">حقن الفيلر</option>
+            <option value="botox">حقن البوتوكس</option>
+            <option value="laser">إزالة الشعر بالليزر</option>
+            <option value="spots">علاج البقع الجلدية</option>
+            <option value="hair">علاج تساقط الشعر</option>
+            <option value="other">استشارة أخرى</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="date">التاريخ المفضل:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="time">الوقت المفضل:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        
+        <div class="form-group" style="grid-column: 1 / -1;">
+          <label for="notes">ملاحظات إضافية:</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        
+        <button type="submit">
+          <i class="fas fa-paper-plane"></i> تأكيد الحجز
+        </button>
+      </form>
+    </section>  
+
+    <section id="blog">
+      <h2>نصائح للعناية بالبشرة</h2>
+      <ul>
+        <li>اغسلي وجهك مرتين يوميًا باستخدام غسول لطيف مناسب لنوع بشرتك</li>
+        <li>استخدمي واقي الشمس يوميًا بعامل حماية لا يقل عن 30 حتى في الأيام الغائمة</li>
+        <li>حافظي على ترطيب بشرتك باستخدام مرطب مناسب لنوعها</li>
+        <li>اشربي كميات كافية من الماء (8 أكواب يوميًا على الأقل)</li>
+        <li>تجنبي لمس وجهك كثيرًا لتقليل نقل البكتيريا</li>
+        <li>احصلي على قسط كافٍ من النوم (7-8 ساعات يوميًا)</li>
+        <li>اتبعي نظامًا غذائيًا صحيًا غنيًا بالفواكه والخضروات</li>
+        <li>تجنبي التدخين والتعرض المفرط لأشعة الشمس</li>
+        <li>استخدمي المنتجات المناسبة لنوع بشرتك بعد استشارة الطبيب</li>
+        <li>قومي بإزالة المكياج قبل النوم باستخدام مزيل لطيف</li>
+      </ul>
+    </section>  
+
+    <section id="contact">
+      <h2>تواصل معنا</h2>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div>
+            <h3>الهاتف</h3>
+            <p>0123-456-789</p>
+            <p>010-987-6543</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h3>البريد الإلكتروني</h3>
+            <p>info@dr-samah.com</p>
+            <p>appointments@dr-samah.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3>العنوان</h3>
+            <p>123 شارع التحرير، الدور الثالث</p>
+            <p>الدقي، الجيزة، مصر</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <h3>ساعات العمل</h3>
+            <p>السبت - الخميس: 9 ص - 5 م</p>
+            <p>الجمعة: مغلق</p>
+          </div>
+        </div>
       </div>
       
-      <div class="gallery-item">
-        <div class="before-after">
-          <img src="https://i.imgur.com/7WX9ZuF.jpg" alt="قبل الفيلر" loading="lazy">
-          <img src="https://i.imgur.com/VvJkQlN.jpg" alt="بعد الفيلر" loading="lazy">
-        </div>
-        <div class="image-label">حقن الفيلر - قبل وبعد</div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/201060986648" class="whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" class="instagram" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
-      
-      <div class="gallery-item">
-        <div class="before-after">
-          <img src="https://i.imgur.com/y8M9prK.jpg" alt="قبل الليزر" loading="lazy">
-          <img src="https://i.imgur.com/zN6LQ2v.jpg" alt="بعد الليزر" loading="lazy">
-        </div>
-        <div class="image-label">إزالة الشعر بالليزر - قبل وبعد</div>
-      </div>
-    </div>
-  </section>  
-
-  <section id="appointment">
-    <h2>احجز موعداً</h2>
-    <form action="https://formspree.io/f/xkgboega" method="post">
-      <label for="name">الاسم الكامل:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="phone">رقم الهاتف:</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="service">اختر الخدمة:</label>
-      <select id="service" name="service" required>
-        <option value="">--اختر خدمة--</option>
-        <option value="hair">كوي الشعر</option>
-        <option value="filler">فيلر</option>
-        <option value="burns">علاج الحروق</option>
-        <option value="laser">إزالة الشعر بالليزر</option>
-        <option value="acne">علاج حب الشباب</option>
-      </select>
-
-      <label for="date">اختر التاريخ:</label>
-      <input type="date" id="date" name="date" required>
-
-      <label for="time">اختر الوقت:</label>
-      <input type="time" id="time" name="time" required>
-
-      <label for="notes">ملاحظات إضافية:</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
-
-      <button type="submit">إرسال</button>
-    </form>
-  </section>  
-
-  <section id="blog">
-    <h2>نصائح العناية بالبشرة</h2>
-    <ul>
-      <li>احرصي على تنظيف بشرتك مرتين يوميًا.</li>
-      <li>استخدمي واقي الشمس بشكل يومي حتى في الشتاء.</li>
-      <li>رطّبي بشرتك باستخدام منتجات مناسبة لنوعها.</li>
-      <li>تناولي كميات كافية من الماء لدعم صحة الجلد.</li>
-      <li>تجنبي لمس وجهك بالأيدي غير النظيفة.</li>
-      <li>استشيري طبيب الجلدية قبل استخدام أي منتجات جديدة.</li>
-    </ul>
-  </section>  
-
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <p><strong>الهاتف:</strong> 0123-456-789</p>
-    <p><strong>البريد الإلكتروني:</strong> dr.samah@example.com</p>
-    <p><strong>العنوان:</strong> 123 شارع الرئيسي، القاهرة، مصر</p>
-    <p><strong>ساعات العمل:</strong> السبت - الخميس | من 9 صباحًا إلى 5 مساءً</p>
-    <p>
-      <strong>تابعنا:</strong>
-      <a href="https://www.facebook.com/profile.php?id=100042916783724" target="_blank" style="color: #3b5998; text-decoration: none; margin-left: 10px;">
-        <i class="fab fa-facebook"></i> فيسبوك
-      </a>
-      |
-      <a href="https://wa.me/201060986648" target="_blank" style="color: #25D366; text-decoration: none; margin-right: 10px;">
-        <i class="fab fa-whatsapp"></i> واتساب
-      </a>
-    </p>
-  </section>  
+    </section>  
+  </main>
 
   <footer>
     <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
+    <p>تصميم وتطوير بواسطة <a href="#" style="color: var(--secondary);">فريق التطوير</a></p>
   </footer>  
 
   <!-- Floating Buttons -->  
@@ -287,4 +717,4 @@
     <i class="fab fa-facebook-f"></i>
   </a>
 </body>
-</html>
+  </html>
