@@ -7,8 +7,96 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
   <style>
-    /* [Previous CSS styles remain exactly the same until the gallery section] */
-    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1556228724-4d68e2e8e9a6?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header, nav, section, footer {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      margin: 10px;
+      padding: 20px;
+    }
+
+    header {
+      background-color: rgba(44, 62, 80, 0.9);
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: rgba(52, 73, 94, 0.9);
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label, select, input, textarea, button {
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #34495e;
+    }
+
+    .whatsapp-float, .facebook-float {
+      position: fixed;
+      bottom: 20px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .whatsapp-float {
+      left: 20px;
+      background-color: #25d366;
+      font-size: 28px;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebe5b;
+    }
+
+    .facebook-float {
+      right: 20px;
+      background-color: #3b5998;
+      font-size: 26px;
+    }
+
+    .facebook-float:hover {
+      background-color: #2d4373;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -23,49 +111,37 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      background: white;
     }
 
-    .before-after-container {
-      display: flex;
+    .gallery-item img {
       width: 100%;
       height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
-    .before-section, .after-section {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .before-label, .after-label {
-      font-weight: bold;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-
-    .before-label { color: #e74c3c; } /* Red for before */
-    .after-label { color: #2ecc71; }  /* Green for after */
-
-    .treatment-image {
-      width: 100%;
-      height: 150px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 4px;
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
 
     .image-label {
+      position: absolute;
+      bottom: 0;
       width: 100%;
-      background: rgba(44, 62, 80, 0.9);
+      background: rgba(0,0,0,0.7);
       color: white;
       text-align: center;
       padding: 8px;
       font-size: 14px;
+    }
+
+    .before-after {
+      display: flex;
+      width: 100%;
+    }
+
+    .before-after img {
+      width: 50%;
     }
 
     @media (max-width: 768px) {
@@ -77,92 +153,138 @@
   </style>
 </head>
 <body>
-  <!-- [Previous HTML remains exactly the same until the gallery section] -->
+  <header>
+    <h1>عيادة الدكتورة سماح الفار</h1>
+    <p>الخدمة الطبية كما يجب أن تكون</p>
+  </header>  
+
+  <nav>
+    <a href="#about">من نحن</a>
+    <a href="#services">الخدمات</a>
+    <a href="#appointment">حجز موعد</a>
+    <a href="#gallery">صور</a>
+    <a href="#blog">نصائح</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>  
+
+  <section id="about">
+    <h2>من هي الدكتورة سماح الفار؟</h2>
+    <p>الدكتورة سماح الفار أخصائية أمراض جلدية و تجميل، تهدف إلى تقديم أفضل رعاية جلدية وجمالية باستخدام أحدث التقنيات.</p>
+  </section>  
+
+  <section id="services">
+    <h2>الخدمات</h2>
+    <ul>
+      <li>كوي الشعر</li>
+      <li>فيلر</li>
+      <li>علاج الحروق</li>
+      <li>ليزر</li>
+      <li>حقن البوتوكس</li>
+      <li>علاج حب الشباب</li>
+    </ul>
+  </section>  
 
   <section id="gallery">
     <h2>معرض النتائج</h2>
     <div class="gallery">
-      <!-- Treatment 1: Acne -->
       <div class="gallery-item">
-        <div class="before-after-container">
-          <div class="before-section">
-            <div class="before-label">قبل العلاج</div>
-            <div class="treatment-image" style="background-color: #fadbd8; display: flex; align-items: center; justify-content: center;">
-              <svg width="80" height="80" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <circle cx="30" cy="30" r="8" fill="#e74c3c"/>
-                <circle cx="60" cy="40" r="5" fill="#e74c3c"/>
-                <circle cx="45" cy="60" r="6" fill="#e74c3c"/>
-                <circle cx="70" cy="70" r="4" fill="#e74c3c"/>
-              </svg>
-            </div>
-          </div>
-          <div class="after-section">
-            <div class="after-label">بعد العلاج</div>
-            <div class="treatment-image" style="background-color: #d5f5e3; display: flex; align-items: center; justify-content: center;">
-              <svg width="100" height="100" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <circle cx="50" cy="50" r="40" fill="#2ecc71" fill-opacity="0.3"/>
-                <path d="M30,50 L45,65 L70,35" stroke="#2ecc71" stroke-width="8" fill="none" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
+        <div class="before-after">
+          <img src="https://i.imgur.com/JqYeZvn.jpg" alt="قبل العلاج" loading="lazy">
+          <img src="https://i.imgur.com/mX8pzDk.jpg" alt="بعد العلاج" loading="lazy">
         </div>
-        <div class="image-label">علاج حب الشباب - النتائج بعد 4 جلسات</div>
+        <div class="image-label">علاج حب الشباب - قبل وبعد</div>
       </div>
       
-      <!-- Treatment 2: Filler -->
       <div class="gallery-item">
-        <div class="before-after-container">
-          <div class="before-section">
-            <div class="before-label">قبل الحقن</div>
-            <div class="treatment-image" style="background-color: #fadbd8; display: flex; align-items: center; justify-content: center;">
-              <svg width="100" height="100" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <path d="M30,70 Q50,30 70,70" stroke="#e74c3c" stroke-width="2" fill="none"/>
-                <path d="M40,60 Q50,50 60,60" stroke="#e74c3c" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-          </div>
-          <div class="after-section">
-            <div class="after-label">بعد الحقن</div>
-            <div class="treatment-image" style="background-color: #d5f5e3; display: flex; align-items: center; justify-content: center;">
-              <svg width="100" height="100" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <path d="M30,70 Q50,50 70,70" stroke="#2ecc71" stroke-width="3" fill="none"/>
-                <path d="M40,65 Q50,55 60,65" stroke="#2ecc71" stroke-width="3" fill="none"/>
-              </svg>
-            </div>
-          </div>
+        <div class="before-after">
+          <img src="https://i.imgur.com/7WX9ZuF.jpg" alt="قبل الفيلر" loading="lazy">
+          <img src="https://i.imgur.com/VvJkQlN.jpg" alt="بعد الفيلر" loading="lazy">
         </div>
-        <div class="image-label">حقن الفيلر - النتائج الفورية</div>
+        <div class="image-label">حقن الفيلر - قبل وبعد</div>
       </div>
       
-      <!-- Treatment 3: Laser -->
       <div class="gallery-item">
-        <div class="before-after-container">
-          <div class="before-section">
-            <div class="before-label">قبل الليزر</div>
-            <div class="treatment-image" style="background-color: #fadbd8; display: flex; align-items: center; justify-content: center;">
-              <svg width="100" height="100" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <line x1="20" y1="30" x2="80" y2="30" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="20" y1="45" x2="80" y2="45" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="20" y1="60" x2="80" y2="60" stroke="#e74c3c" stroke-width="2"/>
-                <line x1="20" y1="75" x2="80" y2="75" stroke="#e74c3c" stroke-width="2"/>
-              </svg>
-            </div>
-          </div>
-          <div class="after-section">
-            <div class="after-label">بعد الليزر</div>
-            <div class="treatment-image" style="background-color: #d5f5e3; display: flex; align-items: center; justify-content: center;">
-              <svg width="100" height="100" viewBox="0 0 100 100" style="opacity: 0.7;">
-                <circle cx="50" cy="50" r="40" fill="#2ecc71" fill-opacity="0.1"/>
-                <path d="M30,50 Q50,30 70,50 Q50,70 30,50" stroke="#2ecc71" stroke-width="2" fill="none"/>
-              </svg>
-            </div>
-          </div>
+        <div class="before-after">
+          <img src="https://i.imgur.com/y8M9prK.jpg" alt="قبل الليزر" loading="lazy">
+          <img src="https://i.imgur.com/zN6LQ2v.jpg" alt="بعد الليزر" loading="lazy">
         </div>
-        <div class="image-label">إزالة الشعر بالليزر - بعد 3 جلسات</div>
+        <div class="image-label">إزالة الشعر بالليزر - قبل وبعد</div>
       </div>
     </div>
-  </section>
+  </section>  
 
-  <!-- [Rest of the HTML remains exactly the same] -->
+  <section id="appointment">
+    <h2>احجز موعداً</h2>
+    <form action="https://formspree.io/f/xkgboega" method="post">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="service">اختر الخدمة:</label>
+      <select id="service" name="service" required>
+        <option value="">--اختر خدمة--</option>
+        <option value="hair">كوي الشعر</option>
+        <option value="filler">فيلر</option>
+        <option value="burns">علاج الحروق</option>
+        <option value="laser">إزالة الشعر بالليزر</option>
+        <option value="acne">علاج حب الشباب</option>
+      </select>
+
+      <label for="date">اختر التاريخ:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">اختر الوقت:</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="notes">ملاحظات إضافية:</label>
+      <textarea id="notes" name="notes" rows="4"></textarea>
+
+      <button type="submit">إرسال</button>
+    </form>
+  </section>  
+
+  <section id="blog">
+    <h2>نصائح العناية بالبشرة</h2>
+    <ul>
+      <li>احرصي على تنظيف بشرتك مرتين يوميًا.</li>
+      <li>استخدمي واقي الشمس بشكل يومي حتى في الشتاء.</li>
+      <li>رطّبي بشرتك باستخدام منتجات مناسبة لنوعها.</li>
+      <li>تناولي كميات كافية من الماء لدعم صحة الجلد.</li>
+      <li>تجنبي لمس وجهك بالأيدي غير النظيفة.</li>
+      <li>استشيري طبيب الجلدية قبل استخدام أي منتجات جديدة.</li>
+    </ul>
+  </section>  
+
+  <section id="contact">
+    <h2>تواصل معنا</h2>
+    <p><strong>الهاتف:</strong> 0123-456-789</p>
+    <p><strong>البريد الإلكتروني:</strong> dr.samah@example.com</p>
+    <p><strong>العنوان:</strong> 123 شارع الرئيسي، القاهرة، مصر</p>
+    <p><strong>ساعات العمل:</strong> السبت - الخميس | من 9 صباحًا إلى 5 مساءً</p>
+    <p>
+      <strong>تابعنا:</strong>
+      <a href="https://www.facebook.com/profile.php?id=100042916783724" target="_blank" style="color: #3b5998; text-decoration: none; margin-left: 10px;">
+        <i class="fab fa-facebook"></i> فيسبوك
+      </a>
+      |
+      <a href="https://wa.me/201060986648" target="_blank" style="color: #25D366; text-decoration: none; margin-right: 10px;">
+        <i class="fab fa-whatsapp"></i> واتساب
+      </a>
+    </p>
+  </section>  
+
+  <footer>
+    <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
+  </footer>  
+
+  <!-- Floating Buttons -->  
+  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook-float" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
 </body>
-  </html>
+</html>
