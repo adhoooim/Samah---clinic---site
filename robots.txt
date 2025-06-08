@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://adhoooim.github.io/Samah---clinic---site/sitemap.xml
