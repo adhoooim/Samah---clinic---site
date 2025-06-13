@@ -36,6 +36,34 @@
       color: #333;
       line-height: 1.6;
     }
+
+    /* Loading Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .loader-circle {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #3a7bd5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
     
     /* Header Styles */
     header {
@@ -218,37 +246,33 @@
       color: white;
     }
     
-    /* Gallery Section */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .gallery-item {
+    /* Gallery Section - Before/After Slider */
+    .slider-container {
       position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      height: 250px;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-    
-    .gallery-item img {
       width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .after-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
       height: 100%;
       object-fit: cover;
-      transition: var(--transition);
     }
-    
-    .gallery-item:hover img {
-      transform: scale(1.1);
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
     }
-    
     .image-label {
       position: absolute;
       bottom: 0;
@@ -258,6 +282,50 @@
       text-align: center;
       padding: 1rem;
       font-size: 1.1rem;
+    }
+
+    /* Pricing Table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .pricing-table th, .pricing-table td {
+      padding: 12px 15px;
+      text-align: right;
+      border-bottom: 1px solid #ddd;
+    }
+    .pricing-table th {
+      background-color: #f8f9fa;
+      font-weight: 700;
+    }
+    .pricing-table tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Google Maps */
+    #clinic-map {
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    /* Stats Counter */
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .stat {
+      text-align: center;
+      padding: 20px;
+    }
+    .counter {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #3a7bd5;
     }
     
     /* Appointment Form */
@@ -503,6 +571,12 @@
   </style>
 </head>
 <body>
+  <!-- Loading Animation -->
+  <div class="loader">
+    <div class="loader-circle"></div>
+    <p>جاري تحميل العيادة...</p>
+  </div>
+
   <header>
     <h1>عيادة الدكتورة سماح الفار</h1>
     <p>التميز في طب الجلدية والعلاجات التجميلية</p>
@@ -548,25 +622,52 @@
       </ul>
     </section>  
 
+    <!-- Before/After Slider -->
     <section id="gallery">
       <h2>معرض النتائج</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="حقن الفيلر" loading="lazy">
-          <div class="image-label">حقن الفيلر - النتائج الفورية</div>
-        </div>
-        
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="حقن الفيلر" loading="lazy">
-          <div class="image-label">حقن الفيلر - النتائج الفورية</div>
-        </div>
-        
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="حقن الفيلر" loading="lazy">
-          <div class="image-label">حقن الفيلر - النتائج الفورية</div>
-        </div>
+      <div class="slider-container">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قبل العلاج">
+        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="بعد العلاج" class="after-image">
+        <input type="range" min="0" max="100" value="50" class="slider">
+        <div class="image-label">نتائج حقن الفيلر - اسحب لرؤية الفرق</div>
       </div>
-    </section>  
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing">
+      <h2>أسعار الخدمات</h2>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>الخدمة</th>
+            <th>السعر</th>
+            <th>المدة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>حقن البوتوكس (منطقة واحدة)</td>
+            <td>1,500 ج.م</td>
+            <td>15 دقيقة</td>
+          </tr>
+          <tr>
+            <td>حقن الفيلر (1 سي سي)</td>
+            <td>3,500 ج.م</td>
+            <td>30 دقيقة</td>
+          </tr>
+          <tr>
+            <td>جلسة ليزر (منطقة صغيرة)</td>
+            <td>800 ج.م</td>
+            <td>20 دقيقة</td>
+          </tr>
+          <tr>
+            <td>علاج حب الشباب (جلسة)</td>
+            <td>600 ج.م</td>
+            <td>30 دقيقة</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <section id="appointment">
       <h2>احجز موعدك الآن</h2>
@@ -621,6 +722,33 @@
       </form>
     </section>  
 
+    <!-- Google Maps -->
+    <section id="location">
+      <h2>موقع العيادة</h2>
+      <div id="clinic-map"></div>
+      <p style="text-align: center; margin-top: 10px;">
+        <i class="fas fa-map-marker-alt"></i> 123 شارع التحرير، الدور الثالث، الدقي، الجيزة
+      </p>
+    </section>
+
+    <!-- Stats Counter -->
+    <section id="stats">
+      <div class="stats-container">
+        <div class="stat">
+          <div class="counter" data-target="2500">0</div>
+          <p>عميل راضٍ</p>
+        </div>
+        <div class="stat">
+          <div class="counter" data-target="15">0</div>
+          <p>سنوات خبرة</p>
+        </div>
+        <div class="stat">
+          <div class="counter" data-target="98">0</div>
+          <p>% رضا العملاء</p>
+        </div>
+      </div>
+    </section>
+
     <section id="blog">
       <h2>نصائح للعناية بالبشرة</h2>
       <ul>
@@ -646,70 +774,4 @@
           </div>
           <div>
             <h3>الهاتف</h3>
-            <p>0123-456-789</p>
-            <p>010-987-6543</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h3>البريد الإلكتروني</h3>
-            <p>info@dr-samah.com</p>
-            <p>appointments@dr-samah.com</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <h3>العنوان</h3>
-            <p>123 شارع التحرير، الدور الثالث</p>
-            <p>الدقي، الجيزة، مصر</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div>
-            <h3>ساعات العمل</h3>
-            <p>السبت - الخميس: 9 ص - 5 م</p>
-            <p>الجمعة: مغلق</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://wa.me/201060986648" class="whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="instagram" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </section>  
-  </main>
-
-  <footer>
-    <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
-    <p>تصميم وتطوير بواسطة <a href="mailto:adhamaboelgoad27@gmail.com" style="color: var(--secondary);">adhamaboelgoad27@gmail.com</a></p>
-  </footer>  
-
-  <!-- Floating Buttons -->  
-  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook-float" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-</body>
-</html>
+         
