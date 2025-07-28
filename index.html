@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مستشفى ليمار التخصصي للأطفال | رعاية طبية متكاملة للأطفال</title>
-  <meta name="description" content="مستشفى ليمار التخصصي للأطفال يقدم رعاية طبية متكاملة بأعلى معايير الجودة تحت إشراف نخبة من استشاريي طب الأطفال">
+  <title>مستشفى ليمار التخصصي للأطفال | دمياط - رعاية طبية متكاملة للأطفال</title>
+  <meta name="description" content="مستشفى ليمار التخصصي للأطفال بدمياط يقدم رعاية طبية متكاملة بأعلى معايير الجودة تحت إشراف أطباء متخصصين في طب الأطفال">
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Fonts -->
@@ -219,96 +219,34 @@
     }
     
     /* Departments Section */
-    .departments {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .department-card {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-      height: 250px;
-      background-color: var(--light);
-    }
-    
-    .department-card:hover {
-      transform: scale(1.03);
-    }
-    
-    .department-card img {
-      width: 100%;
-      height: 70%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-    
-    .department-card:hover img {
-      transform: scale(1.1);
-    }
-    
-    .department-info {
-      padding: 1rem;
-      text-align: center;
-    }
-    
-    .department-info h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    
-    /* Doctors Section */
-    #doctors {
-      text-align: center;
-    }
-    
-    .doctors-grid {
+    .departments-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      gap: 1.5rem;
+      list-style: none;
     }
     
-    .doctor-card {
+    .departments-list li {
       background-color: var(--light);
+      padding: 1.5rem;
       border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
       transition: var(--transition);
     }
     
-    .doctor-card:hover {
-      transform: translateY(-10px);
+    .departments-list li:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-5px);
     }
     
-    .doctor-image {
-      height: 250px;
-      background-color: #ddd;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .doctor-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .doctor-info {
-      padding: 1.5rem;
-    }
-    
-    .doctor-info h3 {
-      color: var(--primary);
+    .department-title {
+      font-weight: 700;
       margin-bottom: 0.5rem;
+      color: var(--dark);
     }
     
-    .doctor-info p.specialty {
-      color: var(--dark);
-      font-weight: 500;
-      margin-bottom: 1rem;
+    .departments-list li:hover .department-title {
+      color: white;
     }
     
     /* Appointment Form */
@@ -366,29 +304,6 @@
     button:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    
-    /* Tips Section */
-    #tips ul {
-      columns: 2;
-      column-gap: 2rem;
-      list-style: none;
-    }
-    
-    #tips li {
-      margin-bottom: 1rem;
-      padding-right: 1.5rem;
-      position: relative;
-      break-inside: avoid;
-    }
-    
-    #tips li::before {
-      content: '\f0a4';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      position: absolute;
-      right: 0;
-      color: var(--primary);
     }
     
     /* Contact Section */
@@ -536,10 +451,6 @@
         padding: 0.5rem;
       }
       
-      #tips ul {
-        columns: 1;
-      }
-      
       .whatsapp-float, .facebook-float {
         width: 50px;
         height: 50px;
@@ -571,7 +482,6 @@
     section:nth-child(3) { animation-delay: 0.3s; }
     section:nth-child(4) { animation-delay: 0.4s; }
     section:nth-child(5) { animation-delay: 0.5s; }
-    section:nth-child(6) { animation-delay: 0.6s; }
   </style>
 </head>
 <body>
@@ -584,9 +494,7 @@
     <a href="#about"><i class="fas fa-hospital"></i> عن المستشفى</a>
     <a href="#services"><i class="fas fa-procedures"></i> خدماتنا</a>
     <a href="#departments"><i class="fas fa-clinic-medical"></i> الأقسام</a>
-    <a href="#doctors"><i class="fas fa-user-md"></i> فريق الأطباء</a>
     <a href="#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a>
-    <a href="#tips"><i class="fas fa-lightbulb"></i> نصائح طبية</a>
     <a href="#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
   </nav>  
 
@@ -594,13 +502,14 @@
     <section id="about">
       <div class="about-content">
         <h2>عن مستشفى ليمار</h2>
-        <p>مستشفى ليمار التخصصي للأطفال هو صرح طبي متكامل يقدم رعاية صحية متخصصة للأطفال من الولادة حتى سن المراهقة، وفقًا لأعلى المعايير العالمية في طب الأطفال.</p>
-        <p>تأسس المستشفى عام 2010 بهدف تقديم خدمات طبية متكاملة للأطفال في بيئة آمنة وداعمة، مزود بأحدث التقنيات الطبية وبكوادر بشرية مؤهلة على أعلى مستوى.</p>
+        <p>مستشفى ليمار التخصصي للأطفال بدمياط هو صرح طبي متكامل يقدم رعاية صحية متخصصة للأطفال من الولادة حتى سن المراهقة، وفقًا لأعلى المعايير الطبية.</p>
+        <p>تأسس المستشفى عام 2022 بهدف تقديم خدمات طبية متكاملة للأطفال في بيئة آمنة وداعمة، مزود بأحدث التقنيات الطبية وبكوادر بشرية مؤهلة.</p>
         <ul>
-          <li>أول مستشفى متخصص في طب الأطفال حاصل على اعتماد الهيئة السعودية للتخصصات الصحية</li>
-          <li>يضم نخبة من استشاريي طب الأطفال والحاصلين على البورد الأمريكي والأوروبي</li>
+          <li>أول مستشفى متخصص في طب الأطفال بدمياط</li>
+          <li>يضم نخبة من أطباء الأطفال المتخصصين</li>
           <li>وحدات عناية مركزة مجهزة بأحدث الأجهزة الطبية</li>
           <li>عيادات تخصصية تشمل جميع تخصصات طب الأطفال</li>
+          <li>خدمات طوارئ للأطفال على مدار 24 ساعة</li>
         </ul>
       </div>
       <div class="about-image">
@@ -626,88 +535,37 @@
 
     <section id="departments">
       <h2>أقسام المستشفى</h2>
-      <div class="departments">
-        <div class="department-card">
-          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم حديثي الولادة" loading="lazy">
-          <div class="department-info">
-            <h3>قسم حديثي الولادة</h3>
-            <p>رعاية متخصصة للمواليد الجدد والخدج</p>
-          </div>
-        </div>
+      <ul class="departments-list">
+        <li>
+          <div class="department-title">قسم حديثي الولادة</div>
+          <p>رعاية متخصصة للمواليد الجدد والخدج تحت إشراف أطباء متخصصين</p>
+        </li>
         
-        <div class="department-card">
-          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم الطوارئ" loading="lazy">
-          <div class="department-info">
-            <h3>قسم الطوارئ</h3>
-            <p>خدمات طوارئ متخصصة للأطفال على مدار الساعة</p>
-          </div>
-        </div>
+        <li>
+          <div class="department-title">قسم الطوارئ</div>
+          <p>خدمات طوارئ متخصصة للأطفال على مدار الساعة طوال أيام الأسبوع</p>
+        </li>
         
-        <div class="department-card">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم العيادات الخارجية" loading="lazy">
-          <div class="department-info">
-            <h3>قسم العيادات الخارجية</h3>
-            <p>عيادات تخصصية في جميع مجالات طب الأطفال</p>
-          </div>
-        </div>
+        <li>
+          <div class="department-title">قسم العيادات الخارجية</div>
+          <p>عيادات تخصصية في جميع مجالات طب الأطفال مع أطباء متخصصين</p>
+        </li>
         
-        <div class="department-card">
-          <img src="https://images.unsplash.com/photo-1579165466749-5650df9b7dab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم التغذية العلاجية" loading="lazy">
-          <div class="department-info">
-            <h3>قسم التغذية العلاجية</h3>
-            <p>برامج تغذية متخصصة للأطفال ذوي الاحتياجات الخاصة</p>
-          </div>
-        </div>
-      </div>
-    </section>  
-
-    <section id="doctors">
-      <h2>فريق الأطباء</h2>
-      <div class="doctors-grid">
-        <div class="doctor-card">
-          <div class="doctor-image">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. أحمد محمد" loading="lazy">
-          </div>
-          <div class="doctor-info">
-            <h3>د. أحمد محمد</h3>
-            <p class="specialty">استشاري طب الأطفال وحديثي الولادة</p>
-            <p>بورد أمريكي في طب الأطفال - زمالة جامعة هارفارد</p>
-          </div>
-        </div>
+        <li>
+          <div class="department-title">قسم التغذية العلاجية</div>
+          <p>برامج تغذية متخصصة للأطفال ذوي الاحتياجات الخاصة والاضطرابات الغذائية</p>
+        </li>
         
-        <div class="doctor-card">
-          <div class="doctor-image">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. سارة عبدالله" loading="lazy">
-          </div>
-          <div class="doctor-info">
-            <h3>د. سارة عبدالله</h3>
-            <p class="specialty">استشارية أمراض القلب للأطفال</p>
-            <p>بورد كندي في أمراض قلب الأطفال - زمالة جامعة تورنتو</p>
-          </div>
-        </div>
+        <li>
+          <div class="department-title">قسم العلاج الطبيعي</div>
+          <p>برامج تأهيل وعلاج طبيعي للأطفال ذوي الاحتياجات الخاصة</p>
+        </li>
         
-        <div class="doctor-card">
-          <div class="doctor-image">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. خالد سليم" loading="lazy">
-          </div>
-          <div class="doctor-info">
-            <h3>د. خالد سليم</h3>
-            <p class="specialty">استشاري جراحة الأطفال</p>
-            <p>بورد أوروبي في جراحة الأطفال - زمالة جامعة لندن</p>
-          </div>
-        </div>
-        
-        <div class="doctor-card">
-          <div class="doctor-image">
-            <img src="https://images.unsplash.com/photo-1551601651-bc60f254d532?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. نورا فاروق" loading="lazy">
-          </div>
-          <div class="doctor-info">
-            <h3>د. نورا فاروق</h3>
-            <p class="specialty">استشارية أعصاب الأطفال</p>
-            <p>بورد أمريكي في طب أعصاب الأطفال - زمالة جامعة جون هوبكنز</p>
-          </div>
-        </div>
-      </div>
+        <li>
+          <div class="department-title">قسم التطعيمات</div>
+          <p>توفير جميع التطعيمات الأساسية والاختيارية وفقًا لبرامج وزارة الصحة</p>
+        </li>
+      </ul>
     </section>  
 
     <section id="appointment">
@@ -724,11 +582,6 @@
         </div>
         
         <div class="form-group">
-          <label for="email">البريد الإلكتروني:</label>
-          <input type="email" id="email" name="email">
-        </div>
-        
-        <div class="form-group">
           <label for="child-age">عمر الطفل:</label>
           <input type="number" id="child-age" name="child-age" required>
         </div>
@@ -738,10 +591,115 @@
           <select id="department" name="department" required>
             <option value="">--اختر القسم--</option>
             <option value="general">عيادة الأطفال العامة</option>
-            <option value="heart">عيادة قلب الأطفال</option>
-            <option value="neuro">عيادة أعصاب الأطفال</option>
-            <option value="surgery">عيادة جراحة الأطفال</option>
-            <option value="nutrition">عيادة التغذية العلاجية</option>
-            <option value="vaccine">عيادة التطعيمات</option>
+            <option value="emergency">قسم الطوارئ</option>
+            <option value="vaccine">قسم التطعيمات</option>
+            <option value="nutrition">قسم التغذية العلاجية</option>
+            <option value="physio">قسم العلاج الطبيعي</option>
             <option value="other">استشارة أخرى</option>
-  
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="date">التاريخ المفضل:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="time">الوقت المفضل:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        
+        <div class="form-group" style="grid-column: 1 / -1;">
+          <label for="notes">ملاحظات إضافية:</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+        
+        <button type="submit">
+          <i class="fas fa-paper-plane"></i> تأكيد الحجز
+        </button>
+      </form>
+    </section>  
+
+    <section id="emergency">
+      <h2>الطوارئ</h2>
+      <p>في حالات الطوارئ الطبية للأطفال، يرجى الاتصال فورًا على:</p>
+      <div class="emergency-number">
+        <i class="fas fa-phone-alt"></i> 123
+      </div>
+      <p>أو التوجه مباشرة إلى قسم الطوارئ بالمستشفى</p>
+      <p>خدمة الطوارئ متاحة 24 ساعة طوال أيام الأسبوع</p>
+    </section>
+
+    <section id="contact">
+      <h2>تواصل معنا</h2>
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div>
+            <h3>الهاتف</h3>
+            <p>0123-456-789</p>
+            <p>010-987-6543</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h3>البريد الإلكتروني</h3>
+            <p>info@lymar-hospital.com</p>
+            <p>appointments@lymar-hospital.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3>العنوان</h3>
+            <p>123 شارع الجلاء، حي الشراقوة</p>
+            <p>دمياط، مصر</p>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div>
+            <h3>ساعات العمل</h3>
+            <p>السبت - الخميس: 8 ص - 10 م</p>
+            <p>الجمعة: 4 م - 10 م</p>
+            <p>قسم الطوارئ: 24 ساعة</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://www.facebook.com/" class="facebook" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/201060986648" class="whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </section>  
+  </main>
+
+  <footer>
+    <p>&copy; 2025 مستشفى ليمار التخصصي للأطفال بدمياط. جميع الحقوق محفوظة.</p>
+  </footer>  
+
+  <!-- Floating Buttons -->  
+  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.facebook.com/" class="facebook-float" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+</body>
+  </html>
