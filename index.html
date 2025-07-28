@@ -391,6 +391,43 @@
       margin: 1rem 0;
     }
     
+    /* Contact Numbers Section */
+    .contact-numbers {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .contact-numbers h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .contact-numbers p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    
+    .contact-numbers .whatsapp {
+      color: #25d366;
+      font-weight: bold;
+    }
+    
+    /* Location Section */
+    .location-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .location-icon {
+      color: var(--primary);
+      font-size: 1.5rem;
+    }
+    
     /* Footer */
     footer {
       background-color: var(--dark);
@@ -632,37 +669,29 @@
 
     <section id="contact">
       <h2>تواصل معنا</h2>
+      
+      <div class="contact-numbers">
+        <h3>للحجز والاستفسار:</h3>
+        <p><i class="fas fa-phone"></i> 01111177445</p>
+        <p><i class="fas fa-phone"></i> 01111187780</p>
+        <p><i class="fas fa-phone"></i> 0572366690</p>
+        <p><i class="fas fa-phone"></i> 0572355590</p>
+        <p class="whatsapp"><i class="fab fa-whatsapp"></i> واتساب: +20 11 11187780</p>
+      </div>
+      
       <div class="contact-info">
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <div>
-            <h3>الهاتف</h3>
-            <p>0123-456-789</p>
-            <p>010-987-6543</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h3>البريد الإلكتروني</h3>
-            <p>info@lymar-hospital.com</p>
-            <p>appointments@lymar-hospital.com</p>
-          </div>
-        </div>
-        
         <div class="contact-card">
           <div class="contact-icon">
             <i class="fas fa-map-marker-alt"></i>
           </div>
           <div>
             <h3>العنوان</h3>
-            <p>123 شارع الجلاء، حي الشراقوة</p>
-            <p>دمياط، مصر</p>
+            <p>دمياط - الأعصر الأولى، نهاية شارع طلعمت</p>
+            <div class="location-info">
+              <a href="https://maps.app.goo.gl/Qmymr8E2eDtJVsCM7?g_st=an" target="_blank">
+                <i class="fas fa-map-marker-alt location-icon"></i> عرض الموقع على الخريطة
+              </a>
+            </div>
           </div>
         </div>
         
@@ -680,10 +709,10 @@
       </div>
       
       <div class="social-links">
-        <a href="https://www.facebook.com/" class="facebook" target="_blank">
+        <a href="https://www.facebook.com/LymarEG" class="facebook" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/201060986648" class="whatsapp" target="_blank">
+        <a href="https://wa.me/201111187780" class="whatsapp" target="_blank">
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
@@ -695,10 +724,10 @@
   </footer>  
 
   <!-- Floating Buttons -->  
-  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/201111187780" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
-  <a href="https://www.facebook.com/" class="facebook-float" target="_blank">
+  <a href="https://www.facebook.com/LymarEG" class="facebook-float" target="_blank">
     <i class="fab fa-facebook-f"></i>
   </a>
 </body>
