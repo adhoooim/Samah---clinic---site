@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>عيادة الدكتورة سماح الفار | طب الجلدية والتجميل</title>
-  <meta name="description" content="عيادة متخصصة في الأمراض الجلدية والعلاجات التجميلية بأحدث التقنيات تحت إشراف الدكتورة سماح الفار">
+  <title>مستشفى ليمار التخصصي للأطفال | رعاية طبية متكاملة للأطفال</title>
+  <meta name="description" content="مستشفى ليمار التخصصي للأطفال يقدم رعاية طبية متكاملة بأعلى معايير الجودة تحت إشراف نخبة من استشاريي طب الأطفال">
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #3a7bd5;
-      --secondary: #00d2ff;
-      --dark: #2c3e50;
+      --primary: #4CAF50;
+      --secondary: #8BC34A;
+      --dark: #2E7D32;
       --light: #f8f9fa;
-      --accent: #ff6b6b;
+      --accent: #FFC107;
       --success: #2ecc71;
       --white: #ffffff;
       --shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -218,46 +218,97 @@
       color: white;
     }
     
-    /* Gallery Section */
-    .gallery {
+    /* Departments Section */
+    .departments {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
     
-    .gallery-item {
+    .department-card {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
       height: 250px;
+      background-color: var(--light);
     }
     
-    .gallery-item:hover {
+    .department-card:hover {
       transform: scale(1.03);
     }
     
-    .gallery-item img {
+    .department-card img {
       width: 100%;
-      height: 100%;
+      height: 70%;
       object-fit: cover;
       transition: var(--transition);
     }
     
-    .gallery-item:hover img {
+    .department-card:hover img {
       transform: scale(1.1);
     }
     
-    .image-label {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      color: white;
-      text-align: center;
+    .department-info {
       padding: 1rem;
-      font-size: 1.1rem;
+      text-align: center;
+    }
+    
+    .department-info h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Doctors Section */
+    #doctors {
+      text-align: center;
+    }
+    
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .doctor-card {
+      background-color: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .doctor-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .doctor-image {
+      height: 250px;
+      background-color: #ddd;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .doctor-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .doctor-info {
+      padding: 1.5rem;
+    }
+    
+    .doctor-info h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .doctor-info p.specialty {
+      color: var(--dark);
+      font-weight: 500;
+      margin-bottom: 1rem;
     }
     
     /* Appointment Form */
@@ -289,7 +340,7 @@
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(58,123,213,0.2);
+      box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
     }
     
     textarea {
@@ -317,21 +368,21 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
     
-    /* Blog Section */
-    #blog ul {
+    /* Tips Section */
+    #tips ul {
       columns: 2;
       column-gap: 2rem;
       list-style: none;
     }
     
-    #blog li {
+    #tips li {
       margin-bottom: 1rem;
       padding-right: 1.5rem;
       position: relative;
       break-inside: avoid;
     }
     
-    #blog li::before {
+    #tips li::before {
       content: '\f0a4';
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
@@ -404,6 +455,27 @@
       background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
     }
     
+    /* Emergency Section */
+    #emergency {
+      background: linear-gradient(135deg, #ff5252, #ff1744);
+      color: white;
+      text-align: center;
+    }
+    
+    #emergency h2 {
+      color: white;
+    }
+    
+    #emergency h2::after {
+      background: white;
+    }
+    
+    #emergency .emergency-number {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+    
     /* Footer */
     footer {
       background-color: var(--dark);
@@ -464,7 +536,7 @@
         padding: 0.5rem;
       }
       
-      #blog ul {
+      #tips ul {
         columns: 1;
       }
       
@@ -504,71 +576,136 @@
 </head>
 <body>
   <header>
-    <h1>عيادة الدكتورة سماح الفار</h1>
-    <p>التميز في طب الجلدية والعلاجات التجميلية</p>
+    <h1>مستشفى ليمار التخصصي للأطفال</h1>
+    <p>رعاية طبية متكاملة بأعلى معايير الجودة</p>
   </header>  
 
   <nav>
-    <a href="#about"><i class="fas fa-user-md"></i> من نحن</a>
-    <a href="#services"><i class="fas fa-procedures"></i> الخدمات</a>
-    <a href="#gallery"><i class="fas fa-images"></i> معرض الأعمال</a>
+    <a href="#about"><i class="fas fa-hospital"></i> عن المستشفى</a>
+    <a href="#services"><i class="fas fa-procedures"></i> خدماتنا</a>
+    <a href="#departments"><i class="fas fa-clinic-medical"></i> الأقسام</a>
+    <a href="#doctors"><i class="fas fa-user-md"></i> فريق الأطباء</a>
     <a href="#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a>
-    <a href="#blog"><i class="fas fa-lightbulb"></i> نصائح طبية</a>
+    <a href="#tips"><i class="fas fa-lightbulb"></i> نصائح طبية</a>
     <a href="#contact"><i class="fas fa-phone-alt"></i> اتصل بنا</a>
   </nav>  
 
   <main>
     <section id="about">
       <div class="about-content">
-        <h2>من هي الدكتورة سماح الفار؟</h2>
-        <p>الدكتورة سماح الفار استشارية أمراض جلدية وتجميل، حاصلة على درجة الماجستير في الأمراض الجلدية من جامعة القاهرة، مع أكثر من 15 عامًا من الخبرة في مجال الأمراض الجلدية والعلاجات التجميلية.</p>
-        <p>تتميز العيادة بتقديم أحدث التقنيات العالمية في مجال العناية بالبشرة وعلاج المشكلات الجلدية، مع التركيز على الجودة والسلامة والنتائج الطبيعية.</p>
+        <h2>عن مستشفى ليمار</h2>
+        <p>مستشفى ليمار التخصصي للأطفال هو صرح طبي متكامل يقدم رعاية صحية متخصصة للأطفال من الولادة حتى سن المراهقة، وفقًا لأعلى المعايير العالمية في طب الأطفال.</p>
+        <p>تأسس المستشفى عام 2010 بهدف تقديم خدمات طبية متكاملة للأطفال في بيئة آمنة وداعمة، مزود بأحدث التقنيات الطبية وبكوادر بشرية مؤهلة على أعلى مستوى.</p>
         <ul>
-          <li>عضو الجمعية المصرية للأمراض الجلدية</li>
-          <li>حاصلة على شهادة البورد الأمريكي في التجميل غير الجراحي</li>
-          <li>مدربة معتمدة في تقنيات الفيلر والبوتوكس</li>
+          <li>أول مستشفى متخصص في طب الأطفال حاصل على اعتماد الهيئة السعودية للتخصصات الصحية</li>
+          <li>يضم نخبة من استشاريي طب الأطفال والحاصلين على البورد الأمريكي والأوروبي</li>
+          <li>وحدات عناية مركزة مجهزة بأحدث الأجهزة الطبية</li>
+          <li>عيادات تخصصية تشمل جميع تخصصات طب الأطفال</li>
         </ul>
       </div>
       <div class="about-image">
-        <i class="fas fa-user-md"></i>
+        <i class="fas fa-hospital"></i>
       </div>
     </section>  
 
     <section id="services">
-      <h2>خدماتنا المتخصصة</h2>
+      <h2>خدماتنا الطبية</h2>
       <ul>
-        <li>علاج حب الشباب والندبات</li>
-        <li>حقن الفيلر لملء التجاعيد وتكبير الشفاه</li>
-        <li>حقن البوتوكس لعلاج تجاعيد الوجه</li>
-        <li>إزالة الشعر بالليزر لجميع مناطق الجسم</li>
-        <li>علاج البقع الجلدية وتوحيد لون البشرة</li>
-        <li>علاج تساقط الشعر والصلع الوراثي</li>
-        <li>العناية بالبشرة والعلاجات التجميلية</li>
-        <li>علاج الأكزيما والصدفية والأمراض الجلدية</li>
+        <li>عيادات الأطفال العامة والتخصصية</li>
+        <li>وحدة العناية المركزة لحديثي الولادة (NICU)</li>
+        <li>وحدة العناية المركزة للأطفال (PICU)</li>
+        <li>قسم الطوارئ للأطفال على مدار 24 ساعة</li>
+        <li>خدمات التطعيمات والتحصين</li>
+        <li>عيادات متابعة النمو والتطور</li>
+        <li>خدمات التغذية العلاجية للأطفال</li>
+        <li>عيادات أمراض القلب والأعصاب للأطفال</li>
+        <li>خدمات العلاج الطبيعي والتأهيل</li>
+        <li>عيادات السكر والغدد الصماء للأطفال</li>
       </ul>
     </section>  
 
-    <section id="gallery">
-      <h2>معرض النتائج</h2>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="علاج حب الشباب" loading="lazy">
-          <div class="image-label">علاج حب الشباب - النتائج بعد 3 جلسات</div>
+    <section id="departments">
+      <h2>أقسام المستشفى</h2>
+      <div class="departments">
+        <div class="department-card">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم حديثي الولادة" loading="lazy">
+          <div class="department-info">
+            <h3>قسم حديثي الولادة</h3>
+            <p>رعاية متخصصة للمواليد الجدد والخدج</p>
+          </div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="حقن الفيلر" loading="lazy">
-          <div class="image-label">حقن الفيلر - النتائج الفورية</div>
+        <div class="department-card">
+          <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم الطوارئ" loading="lazy">
+          <div class="department-info">
+            <h3>قسم الطوارئ</h3>
+            <p>خدمات طوارئ متخصصة للأطفال على مدار الساعة</p>
+          </div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228725-4565a1cd0e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="إزالة الشعر بالليزر" loading="lazy">
-          <div class="image-label">إزالة الشعر بالليزر - بعد 5 جلسات</div>
+        <div class="department-card">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم العيادات الخارجية" loading="lazy">
+          <div class="department-info">
+            <h3>قسم العيادات الخارجية</h3>
+            <p>عيادات تخصصية في جميع مجالات طب الأطفال</p>
+          </div>
         </div>
         
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1556228453-2a2c5a1b7141?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="علاج البقع الجلدية" loading="lazy">
-          <div class="image-label">علاج البقع الجلدية - النتائج بعد شهرين</div>
+        <div class="department-card">
+          <img src="https://images.unsplash.com/photo-1579165466749-5650df9b7dab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="قسم التغذية العلاجية" loading="lazy">
+          <div class="department-info">
+            <h3>قسم التغذية العلاجية</h3>
+            <p>برامج تغذية متخصصة للأطفال ذوي الاحتياجات الخاصة</p>
+          </div>
+        </div>
+      </div>
+    </section>  
+
+    <section id="doctors">
+      <h2>فريق الأطباء</h2>
+      <div class="doctors-grid">
+        <div class="doctor-card">
+          <div class="doctor-image">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. أحمد محمد" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>د. أحمد محمد</h3>
+            <p class="specialty">استشاري طب الأطفال وحديثي الولادة</p>
+            <p>بورد أمريكي في طب الأطفال - زمالة جامعة هارفارد</p>
+          </div>
+        </div>
+        
+        <div class="doctor-card">
+          <div class="doctor-image">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. سارة عبدالله" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>د. سارة عبدالله</h3>
+            <p class="specialty">استشارية أمراض القلب للأطفال</p>
+            <p>بورد كندي في أمراض قلب الأطفال - زمالة جامعة تورنتو</p>
+          </div>
+        </div>
+        
+        <div class="doctor-card">
+          <div class="doctor-image">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. خالد سليم" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>د. خالد سليم</h3>
+            <p class="specialty">استشاري جراحة الأطفال</p>
+            <p>بورد أوروبي في جراحة الأطفال - زمالة جامعة لندن</p>
+          </div>
+        </div>
+        
+        <div class="doctor-card">
+          <div class="doctor-image">
+            <img src="https://images.unsplash.com/photo-1551601651-bc60f254d532?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="د. نورا فاروق" loading="lazy">
+          </div>
+          <div class="doctor-info">
+            <h3>د. نورا فاروق</h3>
+            <p class="specialty">استشارية أعصاب الأطفال</p>
+            <p>بورد أمريكي في طب أعصاب الأطفال - زمالة جامعة جون هوبكنز</p>
+          </div>
         </div>
       </div>
     </section>  
@@ -592,129 +729,19 @@
         </div>
         
         <div class="form-group">
-          <label for="service">اختر الخدمة:</label>
-          <select id="service" name="service" required>
-            <option value="">--اختر خدمة--</option>
-            <option value="acne">علاج حب الشباب</option>
-            <option value="filler">حقن الفيلر</option>
-            <option value="botox">حقن البوتوكس</option>
-            <option value="laser">إزالة الشعر بالليزر</option>
-            <option value="spots">علاج البقع الجلدية</option>
-            <option value="hair">علاج تساقط الشعر</option>
+          <label for="child-age">عمر الطفل:</label>
+          <input type="number" id="child-age" name="child-age" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="department">القسم المطلوب:</label>
+          <select id="department" name="department" required>
+            <option value="">--اختر القسم--</option>
+            <option value="general">عيادة الأطفال العامة</option>
+            <option value="heart">عيادة قلب الأطفال</option>
+            <option value="neuro">عيادة أعصاب الأطفال</option>
+            <option value="surgery">عيادة جراحة الأطفال</option>
+            <option value="nutrition">عيادة التغذية العلاجية</option>
+            <option value="vaccine">عيادة التطعيمات</option>
             <option value="other">استشارة أخرى</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="date">التاريخ المفضل:</label>
-          <input type="date" id="date" name="date" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="time">الوقت المفضل:</label>
-          <input type="time" id="time" name="time" required>
-        </div>
-        
-        <div class="form-group" style="grid-column: 1 / -1;">
-          <label for="notes">ملاحظات إضافية:</label>
-          <textarea id="notes" name="notes" rows="4"></textarea>
-        </div>
-        
-        <button type="submit">
-          <i class="fas fa-paper-plane"></i> تأكيد الحجز
-        </button>
-      </form>
-    </section>  
-
-    <section id="blog">
-      <h2>نصائح للعناية بالبشرة</h2>
-      <ul>
-        <li>اغسلي وجهك مرتين يوميًا باستخدام غسول لطيف مناسب لنوع بشرتك</li>
-        <li>استخدمي واقي الشمس يوميًا بعامل حماية لا يقل عن 30 حتى في الأيام الغائمة</li>
-        <li>حافظي على ترطيب بشرتك باستخدام مرطب مناسب لنوعها</li>
-        <li>اشربي كميات كافية من الماء (8 أكواب يوميًا على الأقل)</li>
-        <li>تجنبي لمس وجهك كثيرًا لتقليل نقل البكتيريا</li>
-        <li>احصلي على قسط كافٍ من النوم (7-8 ساعات يوميًا)</li>
-        <li>اتبعي نظامًا غذائيًا صحيًا غنيًا بالفواكه والخضروات</li>
-        <li>تجنبي التدخين والتعرض المفرط لأشعة الشمس</li>
-        <li>استخدمي المنتجات المناسبة لنوع بشرتك بعد استشارة الطبيب</li>
-        <li>قومي بإزالة المكياج قبل النوم باستخدام مزيل لطيف</li>
-      </ul>
-    </section>  
-
-    <section id="contact">
-      <h2>تواصل معنا</h2>
-      <div class="contact-info">
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <div>
-            <h3>الهاتف</h3>
-            <p>0123-456-789</p>
-            <p>010-987-6543</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h3>البريد الإلكتروني</h3>
-            <p>info@dr-samah.com</p>
-            <p>appointments@dr-samah.com</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <h3>العنوان</h3>
-            <p>123 شارع التحرير، الدور الثالث</p>
-            <p>الدقي، الجيزة، مصر</p>
-          </div>
-        </div>
-        
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div>
-            <h3>ساعات العمل</h3>
-            <p>السبت - الخميس: 9 ص - 5 م</p>
-            <p>الجمعة: مغلق</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://wa.me/201060986648" class="whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="#" class="instagram" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </section>  
-  </main>
-
-  <footer>
-    <p>&copy; 2025 عيادة الدكتورة سماح الفار. جميع الحقوق محفوظة.</p>
-    <p>تصميم وتطوير بواسطة <a href="#" style="color: var(--secondary);">فريق التطوير</a></p>
-  </footer>  
-
-  <!-- Floating Buttons -->  
-  <a href="https://wa.me/201060986648" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://www.facebook.com/profile.php?id=100042916783724" class="facebook-float" target="_blank">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-</body>
-              </html>
+  
